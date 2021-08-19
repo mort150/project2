@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search page</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    div {
+        background-color: lightsalmon;
+    }
+
+    #menu ul {
+        list-style-type: none;
+        background: #1f568b;
+        text-align: center;
+    }
+
+    #menu ul li {
+        display: inline-block;
+        padding: 20px;
+        font-size: 30px;
+        width: 100px;
+        height: 40px;
+        line-height: 30px;
+    }
+
+    #menu ul li a {
+        color: ghostwhite;
+        text-decoration: none;
+        display: block;
+    }
+
+    #menu ul li a:hover {
+        background: ghostwhite;
+        color: #333;
+    }
+
+    button {
+        background: green;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    form {
+        border: green;
+    }
+</style>
+
+<body>
+    <center>
+        <div>
+            <h1>Welcome to Update page</h1>
+            <img src="https://www.matbao.net/Content/images/LandingPage/LandingPageStore/dot_store.png" width="200"
+                height="100">
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/add">Add product</a></li>
+            </ul>
+        </div>
+        <hr>
+        <br><br>
+        <form action="/search" method="post">
+            <input type="text" name="txtSearch" placeholder="Name Input">
+            <br><br>
+            <button type="submit">Search</button>
+        </form>
+    </center>
+</body>
+
+</html>

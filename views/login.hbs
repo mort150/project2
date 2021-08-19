@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    body {
+        background-color: white;
+    }
+
+    h2 {
+        color: darkcyan;
+    }
+
+    div {
+        background-color: lightsalmon;
+    }
+</style>
+<body>
+    <center>
+        <div>
+            <img src="https://www.matbao.net/Content/images/LandingPage/LandingPageStore/dot_store.png" width="200"
+                height="100">
+        </div>
+        <h2>Login</h2>
+        <form action="/dologin" method="post">
+            <input type="text" name="txtName" placeholder="Input username" required>
+            <br><br>
+            <input type="password" name="txtPassword" placeholder="Input password" required>
+            <br><br>
+            <button type="submit">Login</button>
+        </form>
+        <hr>
+        <h2>Register a new account</h2>
+        <form action="/register" method="post">
+            <input type="text" name="txtName" placeholder="Input username" required>
+            <br><br>
+            <input type="password" name="txtPassword" placeholder="Input password" required>
+            <br><br>
+            <select name="role">
+                <option value="admin">Admin</option>
+                <option value="customer">Customer</option>
+            </select>
+            <br><br>
+            <button type="submit">Register</button>
+        </form>
+    </center>
+</body>
+
+</html>

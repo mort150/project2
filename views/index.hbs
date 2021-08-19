@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    div {
+        background-color: lightsalmon;
+    }
+
+    #menu ul {
+        list-style-type: none;
+        background: #1f568b;
+        text-align: center;
+    }
+
+    #menu ul li {
+        display: inline-table;
+        padding: 30px;
+        font-size: 30px;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    #menu ul li a {
+        color: ghostwhite;
+        text-decoration: none;
+        display: block;
+    }
+
+    #menu ul li a:hover {
+        background: ghostwhite;
+        color: #333;
+    }
+
+    th,
+    td {
+        padding: 20px 25px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <center>
+        <div id="header">
+            <h1>Welcome to Thanh's Store</h1>
+            <img src="https://www.matbao.net/Content/images/LandingPage/LandingPageStore/dot_store.png" width="200"
+                height="100">
+        </div>
+        <h1>Hello {{user.name}}, you had logged in as a(n) {{user.role}}!!!</h1>
+        <div id="menu">
+            <ul>
+                <li><a href="/add">Add product</a></li>
+                <li><a href="/search">Search product</a></li>
+            </ul>
+        </div>
+        <div id="main">
+            {{#each data}}
+            <table border="3" style="width: 90%;">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Picture</th>
+                    <th colspan="2">Option</th>
+                </tr>
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{price}}</td>
+                    <td><img src="{{picture}}" width="200" height="150"></td>
+                    <td><a href="/delete?id={{_id}}">Delete</a></td>
+                    <td><a href="/edit?id={{_id}}">Edit</a></td>
+                </tr>
+            </table>
+            {{/each}}
+        </div>
+        </form>
+    </center>
+</body>
+
+</html>

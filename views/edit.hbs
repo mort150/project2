@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    div {
+        background-color: lightsalmon;
+    }
+
+    #menu ul {
+        list-style-type: none;
+        background: #1f568b;
+        text-align: center;
+    }
+
+    #menu ul li {
+        display: inline-table;
+        padding: 30px;
+        font-size: 30px;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    #menu ul li a {
+        color: ghostwhite;
+        text-decoration: none;
+        display: block;
+    }
+
+    #menu ul li a:hover {
+        background: ghostwhite;
+        color: #333;
+    }
+
+    button {
+        background: green;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    form {
+        border: green;
+    }
+</style>
+
+<body>
+    <center>
+        <div>
+            <h1>Welcome to Update page</h1>
+            <img src="https://www.matbao.net/Content/images/LandingPage/LandingPageStore/dot_store.png" width="200"
+                height="100">
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/search">Search product</a></li>
+            </ul>
+        </div>
+        <hr>
+        <br><br>
+        <form action="/update" method="post">
+            <input type="hidden" name="id" value="{{product._id}}">
+            <input type="text" name="txtName" placeholder="Input Name" value="{{product.name}}">
+            <br><br>
+            <input type="text" name="txtPrice" placeholder="Input Price" value="{{product.tuoi}}">
+            <br><br>
+            <input type="text" name="picture" placeholder="Input Image'Url" value="{{product.picture}}">
+            <br><br>
+            <button type="submit">Update</button>
+        </form>
+    </center>
+</body>
+
+</html>
