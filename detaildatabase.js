@@ -1,10 +1,10 @@
 const {MongoClient,ObjectId} = require('mongodb');
 
-const URL = 'mongodb://localhost:27017';
+const URL = 'mongodb+srv://mortdz150:mortdz150@cluster0.ltplv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 async function getDB() {
     const client = await MongoClient.connect(URL);
-    const dbo = client.db("STORE1DB");
+    const dbo = client.db("STORE01DB");
     return dbo;
 }
 async function insertProduct(newProduct) {
