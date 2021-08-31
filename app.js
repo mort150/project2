@@ -17,10 +17,18 @@ app.get('/', requireLogin, async (req, res) => {
 app.post('/insert', async (req, res) => {
     const nameInput = req.body.txtName;
     const priceInput = req.body.txtPrice;
+    const disInput = req.body.txtDisciption;
     const pictureInput = req.body.picture;
-    const newProduct = { name: nameInput, price: Int32(priceInput), picture: pictureInput };
-    await insertProduct(newProduct);
-    res.redirect('/');
+    // var text = "This Product belong to ATN's shop";
+    var discription = disInput.substring(0,9);
+    if(isNaN(priceInput)){
+        res.render('detail',{message:"The price must be number!!!"})
+    }else{
+        const newProduct = { name: nameInput, price: Int32(priceInput),dis:discription, picture: pictureInput };
+        await insertProduct(newProduct);
+        res.redirect('/'); 
+    }
+
 })
 app.get('/delete', async (req, res) => {
     const idInput = req.query.id;
@@ -59,9 +67,6 @@ app.post('/search', async (req, res) => {
     res.render('index', { data: allProducts })
 })
 
-app.get('/nologin', requireLogin, (req, res) => {
-    res.render('noLogin');
-})
 
 app.post('/register', async (req, res) => {
     const nameInput = req.body.txtName;
